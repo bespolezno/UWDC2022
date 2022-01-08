@@ -23,7 +23,7 @@ class AuthController extends Controller
             return response()->json(['token' => Auth::user()->generateToken()]);
         }
 
-        return response()->json(['message' => 'Invalid credentials'], 401);
+        return response()->json(['message' => 'Invalid credentials'], 422);
     }
 
     public function logout()
