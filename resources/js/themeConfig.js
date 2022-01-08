@@ -9,7 +9,7 @@ export const $themeBreakpoints = {}
 // APP CONFIG
 export const $themeConfig = {
   app: {
-    appName: 'Vuexy', // Will update name in navigation menu (Branding)
+    appName: 'UWDC2022', // Will update name in navigation menu (Branding)
     // eslint-disable-next-line global-require
     appLogoImage: require('@/assets/images/logo/logo.svg') // Will update logo in navigation menu (Branding)
   },
@@ -17,10 +17,10 @@ export const $themeConfig = {
     isRTL: false,
     skin: 'light', // light, dark, bordered, semi-dark
     routerTransition: 'zoom-fade', // zoom-fade, slide-fade, fade-bottom, fade, zoom-out, none
-    type: 'vertical', // vertical, horizontal
+    type: 'horizontal', // vertical, horizontal
     contentWidth: 'full', // full, boxed
     menu: {
-      hidden: false,
+      hidden: true,
       isCollapsed: false
     },
     navbar: {
@@ -29,7 +29,7 @@ export const $themeConfig = {
       backgroundColor: '' // BS color options [primary, success, etc]
     },
     footer: {
-      type: 'static' // static, sticky, hidden
+      type: 'hidden' // static, sticky, hidden
     },
     customizer: true,
     enableScrollToTop: true
