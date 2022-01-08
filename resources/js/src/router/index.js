@@ -25,20 +25,6 @@ const router = new VueRouter({
       },
     },
     {
-      path: '/second-page',
-      name: 'second-page',
-      component: () => import('@/views/SecondPage.vue'),
-      meta: {
-        pageTitle: 'Second Page',
-        breadcrumb: [
-          {
-            text: 'Second Page',
-            active: true,
-          },
-        ],
-      },
-    },
-    {
       path: '/login',
       name: 'login',
       component: () => import('@/views/Login.vue'),
@@ -59,6 +45,11 @@ const router = new VueRouter({
       redirect: 'error-404',
     },
   ],
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'login' && !localStorage.token) next({ name: 'login' })
+  else next()
 })
 
 // ? For splash screen
