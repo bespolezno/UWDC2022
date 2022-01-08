@@ -1,5 +1,7 @@
 # UWDC2022
 
+https://github.com/bespolezno/UWDC2022
+
 2nd unofficial Web Development Competition 2022
 
 ## Installation
