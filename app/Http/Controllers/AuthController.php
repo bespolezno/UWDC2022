@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    /**
+     * Returns user data
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function user()
     {
         $user = \auth()->user();
@@ -17,6 +21,11 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Sign in
+     * @param LoginRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function login(LoginRequest $request)
     {
         if (Auth::attempt($request->validated())) {
@@ -26,6 +35,10 @@ class AuthController extends Controller
         return response()->json(['message' => 'Invalid credentials'], 422);
     }
 
+    /**
+     * Logout from account
+     * @return \Illuminate\Http\Response
+     */
     public function logout()
     {
         Auth::user()->clearToken();
