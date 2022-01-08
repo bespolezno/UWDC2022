@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateSessionRequest;
 use App\Http\Requests\UpdateSessionRequest;
+use App\Http\Resources\SessionResource;
 use App\Models\Category;
 use App\Models\Session;
 use App\Models\Tag;
 use App\Models\Type;
-use App\Models\User;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
 class SessionController extends Controller
@@ -20,7 +20,7 @@ class SessionController extends Controller
      */
     public function index()
     {
-        return response()->json(auth()->user()->sessions);
+        return response()->json(SessionResource::collection(auth()->user()->sessions));
     }
 
     /**
@@ -46,7 +46,7 @@ class SessionController extends Controller
 
         $session->tags()->sync($tags->map->id);
 
-        return response()->json($session, 201);
+        return response()->json(SessionResource::make($session), 201);
     }
 
     /**
@@ -60,7 +60,7 @@ class SessionController extends Controller
         if (auth()->id() !== $session->user_id)
             throw new HttpResponseException(response()->json(['message' => 'This is not your session'], 401));
 
-        return response()->json($session);
+        return response()->json(SessionResource::make($session));
     }
 
     /**
@@ -89,6 +89,6 @@ class SessionController extends Controller
 
         $session->tags()->sync($tags->map->id);
 
-        return response()->json($session);
+        return response()->json(SessionResource::make($session));
     }
 }

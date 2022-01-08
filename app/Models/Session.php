@@ -18,7 +18,7 @@ class Session extends Model
 
     public function tags()
     {
-        return $this->hasManyThrough(Tag::class, SessionTag::class);
+        return $this->belongsToMany(Tag::class, 'session_tags');
     }
 
     public function category()
