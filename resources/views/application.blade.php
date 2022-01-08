@@ -11,13 +11,13 @@
   <title>Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template</title>
 
   <!-- Splash Screen/Loader Styles -->
-  <link rel="stylesheet" type="text/css" href="{{ asset(mix('css/loader.css')) }}" />
+  <link rel="stylesheet" type="text/css" href="{{ secure_asset(mix('css/loader.css')) }}" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ asset(mix('css/app.css')) }}">
+  <link rel="stylesheet" href="{{ secure_asset(mix('css/app.css')) }}">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ asset('images/logo/favicon.png') }}">
+  <link rel="shortcut icon" href="{{ secure_asset('images/logo/favicon.png') }}">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
@@ -31,7 +31,7 @@
   </noscript>
   <div id="loading-bg">
     <div class="loading-logo">
-      <img src="{{ asset('logo.png') }}" alt="Logo" />
+      <img src="{{ secure_asset('logo.png') }}" alt="Logo" />
     </div>
     <div class="loading">
       <div class="effect-1 effects"></div>
@@ -42,7 +42,7 @@
   <div id="app">
   </div>
 
-  <script src="{{ asset(mix('js/app.js')) }}"></script>
+  <script src="{{ secure_asset(mix('js/app.js')) }}"></script>
 
 </body>
 
